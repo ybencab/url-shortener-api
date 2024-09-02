@@ -6,3 +6,21 @@ API funcional para acortar URL de manera sencilla hecha totalmente en Go utiliza
 DB_URL="postgresql://usuario:contraseña@host:puerto/base_de_datos"
 PORT=":3000"
 ```
+
+## Peticiones
+
+### Crear
+Para crear una ruta deberás realizar una petición a /url/create con el siguiente cuerpo:
+``` json
+{
+  "custom_slug": "mi_custom_slug",
+  "long_url": "https://mi-url.com/muy/muy/larga"
+}
+```
+
+### Obtener todas las URLs
+Deberás realizar una petición a /url y esta devolverá todas las URL creadas
+
+
+### Obtener una URL específica
+Al realizar una petición a /url/{slug} donde 'slug' debe ser el valor que indicamos mediante el campo 'custom_slug' al crear la entrada
